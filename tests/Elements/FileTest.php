@@ -24,7 +24,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file">',
-            File::make()
+            File::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" autofocus>',
-            File::make()->autofocus()
+            File::make()->autofocus(),
         );
     }
 
@@ -42,7 +42,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" autofocus>',
-            File::make()->autofocus(true)
+            File::make()->autofocus(true),
         );
     }
 
@@ -51,7 +51,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file">',
-            File::make()->autofocus(false)
+            File::make()->autofocus(false),
         );
     }
 
@@ -60,7 +60,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" required>',
-            File::make()->required()
+            File::make()->required(),
         );
     }
 
@@ -69,7 +69,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" name="file">',
-            File::make()->name('file')
+            File::make()->name('file'),
         );
     }
 
@@ -78,7 +78,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" id="file" name="file">',
-            File::make()->name('file')->id('file')
+            File::make()->name('file')->id('file'),
         );
     }
 
@@ -114,7 +114,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" accept=".jpg">',
-            File::make()->accept('.jpg')
+            File::make()->accept('.jpg'),
         );
     }
 
@@ -123,7 +123,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file" multiple>',
-            File::make()->multiple()
+            File::make()->multiple(),
         );
     }
 }

@@ -23,7 +23,7 @@ class RadioTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="radio">',
-            $this->html->radio()
+            $this->html->radio(),
         );
     }
 
@@ -32,7 +32,7 @@ class RadioTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="radio" name="my_radio" id="my_radio">',
-            $this->html->radio('my_radio')
+            $this->html->radio('my_radio'),
         );
     }
 
@@ -41,7 +41,7 @@ class RadioTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="radio" name="my_radio" id="my_radio" checked="checked">',
-            $this->html->radio('my_radio', true)
+            $this->html->radio('my_radio', true),
         );
     }
 
@@ -50,7 +50,7 @@ class RadioTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="radio" name="my_radio" id="my_radio_1" checked="checked" value="1">',
-            $this->html->radio('my_radio', true, 1)
+            $this->html->radio('my_radio', true, 1),
         );
     }
 
@@ -59,7 +59,7 @@ class RadioTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="radio" name="my_radio" id="my_radio_0" checked="checked" value="0">',
-            $this->html->radio('my_radio', true, 0)
+            $this->html->radio('my_radio', true, 0),
         );
     }
 }

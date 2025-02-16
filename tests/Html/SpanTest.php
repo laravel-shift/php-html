@@ -23,7 +23,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span></span>',
-            $this->html->span()
+            $this->html->span(),
         );
     }
 
@@ -32,7 +32,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span>Hi</span>',
-            $this->html->span('Hi')
+            $this->html->span('Hi'),
         );
     }
 
@@ -41,7 +41,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span><em>Hi</em></span>',
-            $this->html->span('<em>Hi</em>')
+            $this->html->span('<em>Hi</em>'),
         );
     }
 
@@ -50,7 +50,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span>50</span>',
-            $this->html->span(50)
+            $this->html->span(50),
         );
     }
 
@@ -59,7 +59,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span>50.5</span>',
-            $this->html->span(50.5)
+            $this->html->span(50.5),
         );
     }
 
@@ -68,7 +68,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span>1337</span>',
-            $this->html->span(0x539)
+            $this->html->span(0x539),
         );
     }
 
@@ -77,7 +77,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span>83</span>',
-            $this->html->span(0123)
+            $this->html->span(0123),
         );
     }
 }

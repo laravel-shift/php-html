@@ -59,7 +59,7 @@ class Select extends HtmlElement
 
         return $elt->if(
             $name && ! Str::endsWith($name->value(), '[]'),
-            fn(self $elt) => $elt->name($name->value() . '[]')
+            fn(self $elt) => $elt->name($name->value() . '[]'),
         )->applyValueToOptions();
     }
 
@@ -74,7 +74,7 @@ class Select extends HtmlElement
             $options,
             fn($text, $value) => is_array($text) || $text instanceof Collection
             ? $this->makeOptionsGroup($value, $text, $attributes, $groupAttributes[$value] ?? [])
-            : $this->makeOption($value, $text, $attributes[$value] ?? [])
+            : $this->makeOption($value, $text, $attributes[$value] ?? []),
         );
     }
 
@@ -88,7 +88,7 @@ class Select extends HtmlElement
         return $this->prependChild(
             $this->makeOption($value, $text)
                 ->selectedUnless($this->hasSelection())
-                ->disabled($disabled)
+                ->disabled($disabled),
         );
     }
 
@@ -116,7 +116,7 @@ class Select extends HtmlElement
 
             if ($child instanceof Selectable) {
                 return $child->selectedIf(
-                    $value->contains($child->getAttribute('value')->value())
+                    $value->contains($child->getAttribute('value')->value()),
                 );
             }
 
@@ -135,7 +135,7 @@ class Select extends HtmlElement
     protected function hasSelection(): bool
     {
         return $this->getChildren()->contains(
-            fn(HtmlElement $child) => $child->hasAttribute('selected')
+            fn(HtmlElement $child) => $child->hasAttribute('selected'),
         );
     }
 
@@ -158,14 +158,14 @@ class Select extends HtmlElement
         string $label,
         array $options,
         array $attributes = [],
-        array $groupAttributes = []
+        array $groupAttributes = [],
     ): Optgroup {
         return Optgroup::make()
             ->label($label)
             ->attributes($groupAttributes)
             ->children(
                 $options,
-                fn($optionText, $optionValue) => $this->makeOption($optionValue, $optionText, $attributes[$optionValue] ?? [])
+                fn($optionText, $optionValue) => $this->makeOption($optionValue, $optionText, $attributes[$optionValue] ?? []),
             );
     }
 
@@ -183,7 +183,7 @@ class Select extends HtmlElement
         }
 
         return $this->setNewChildren(
-            static::applyValueToElements($value, $this->getChildren())
+            static::applyValueToElements($value, $this->getChildren()),
         );
     }
 }

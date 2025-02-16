@@ -23,7 +23,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button></button>',
-            $this->html->button()
+            $this->html->button(),
         );
     }
 
@@ -32,7 +32,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button>Hi</button>',
-            $this->html->button('Hi')
+            $this->html->button('Hi'),
         );
     }
 
@@ -41,7 +41,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button><em>Hi</em></button>',
-            $this->html->button('<em>Hi</em>')
+            $this->html->button('<em>Hi</em>'),
         );
     }
 
@@ -50,7 +50,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="submit">Hi</button>',
-            $this->html->button('Hi', 'submit')
+            $this->html->button('Hi', 'submit'),
         );
     }
 }

@@ -32,7 +32,7 @@ class ImgTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<img alt="Image title">',
-            Img::make()->alt('Image title')
+            Img::make()->alt('Image title'),
         );
     }
 
@@ -41,7 +41,7 @@ class ImgTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<img src="logo.jpg">',
-            Img::make()->src('logo.jpg')
+            Img::make()->src('logo.jpg'),
         );
     }
 
@@ -50,7 +50,7 @@ class ImgTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<img src="logo.jpg" alt="ARCANEDEV">',
-            Img::make()->src('logo.jpg')->alt('ARCANEDEV')
+            Img::make()->src('logo.jpg')->alt('ARCANEDEV'),
         );
     }
 }

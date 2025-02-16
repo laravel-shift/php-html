@@ -134,10 +134,10 @@ class ClassAttribute extends AbstractAttribute implements Countable
             return $this;
         }
 
-        $class = trim($class);
+        $class = mb_trim($class);
 
         return $this->setValue(
-            array_diff($this->all(), [$class])
+            array_diff($this->all(), [$class]),
         );
     }
 
@@ -166,7 +166,7 @@ class ClassAttribute extends AbstractAttribute implements Countable
      */
     public function has(string $class): bool
     {
-        return in_array(trim($class), $this->all());
+        return in_array(mb_trim($class), $this->all());
     }
 
     /**

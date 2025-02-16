@@ -21,7 +21,7 @@ class MissingTagException extends Exception
     public static function onClass(string $className): static
     {
         return new static(
-            "Class {$className} has no `\$tag` property or empty."
+            "Class {$className} has no `\$tag` property or empty.",
         );
     }
 }

@@ -24,7 +24,7 @@ class PTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<p></p>',
-            P::make()
+            P::make(),
         );
     }
 }

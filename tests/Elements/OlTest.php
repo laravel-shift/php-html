@@ -27,7 +27,7 @@ class OlTest extends TestCase
         $expectations = [
             \Arcanedev\Html\Elements\HtmlElement::class,
             \Arcanedev\Html\Elements\ListElement::class,
-            \Arcanedev\Html\Elements\Ol::class,
+            Ol::class,
         ];
 
         foreach ($expectations as $expected) {
@@ -44,7 +44,7 @@ class OlTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<ol class="list-unstyled"></ol>',
-            Ol::make()->class('list-unstyled')
+            Ol::make()->class('list-unstyled'),
         );
     }
 
@@ -73,7 +73,7 @@ class OlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ol>',
-            $ol
+            $ol,
         );
     }
 
@@ -92,7 +92,7 @@ class OlTest extends TestCase
                 '<li><a href="#">Item 2</a></li>' .
                 '<li><a href="#">Item 3</a></li>' .
             '</ol>',
-            Ol::make()->items($items)
+            Ol::make()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -103,7 +103,7 @@ class OlTest extends TestCase
             '</ol>',
             Ol::make()
                 ->attributes(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 
@@ -122,7 +122,7 @@ class OlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ol>',
-            Ol::make()->items($items)
+            Ol::make()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -133,7 +133,7 @@ class OlTest extends TestCase
             '</ol>',
             Ol::make()
                 ->attributes(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 
@@ -158,7 +158,7 @@ class OlTest extends TestCase
                     '</ol>' .
                 '</li>' .
             '</ol>',
-            Ol::make()->items($items)
+            Ol::make()->items($items),
         );
     }
 }

@@ -23,7 +23,7 @@ class ImgTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<img src="/path/to/image/file" alt="alt_value">',
-            $this->html->img('/path/to/image/file', 'alt_value')
+            $this->html->img('/path/to/image/file', 'alt_value'),
         );
     }
 }

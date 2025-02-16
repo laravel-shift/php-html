@@ -27,17 +27,17 @@ class ClassAttributeTest extends TestCase
 
         static::assertEquals(
             ['btn', 'btn-primary'],
-            ClassAttribute::make('btn btn-primary')->all()
+            ClassAttribute::make('btn btn-primary')->all(),
         );
 
         static::assertEquals(
             ['btn', 'btn-primary'],
-            ClassAttribute::make(['btn', 'btn-primary'])->all()
+            ClassAttribute::make(['btn', 'btn-primary'])->all(),
         );
 
         static::assertEquals(
             ['btn', 'btn-primary'],
-            ClassAttribute::make(collect(['btn', 'btn-primary']))->all()
+            ClassAttribute::make(collect(['btn', 'btn-primary']))->all(),
         );
     }
 

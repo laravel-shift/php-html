@@ -24,7 +24,7 @@ class ElementTest extends TestCase
     {
         static::assertEquals(
             '<foo></foo>',
-            $this->html->element('foo')
+            $this->html->element('foo'),
         );
     }
 
@@ -36,22 +36,22 @@ class ElementTest extends TestCase
 
         static::assertEquals(
             '<foo class="active"></foo>',
-            $elt->if(true, $callback)
+            $elt->if(true, $callback),
         );
 
         static::assertEquals(
             '<foo></foo>',
-            $elt->if(false, $callback)
+            $elt->if(false, $callback),
         );
 
         static::assertEquals(
             '<foo class="active"></foo>',
-            $elt->unless(false, $callback)
+            $elt->unless(false, $callback),
         );
 
         static::assertEquals(
             '<foo></foo>',
-            $elt->unless(true, $callback)
+            $elt->unless(true, $callback),
         );
     }
 
@@ -63,7 +63,7 @@ class ElementTest extends TestCase
             $this->html->div()
                 ->attributeIf(true, 'foo', 'bar')
                 ->attributeIf(false, 'bar', 'baz')
-                ->render()
+                ->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -71,14 +71,14 @@ class ElementTest extends TestCase
             $this->html->div()
                 ->attributeUnless(false, 'foo', 'bar')
                 ->attributeUnless(true, 'bar', 'baz')
-                ->render()
+                ->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<input required>',
             $this->html->input()
                 ->attributeUnless(false, 'required')
-                ->render()
+                ->render(),
         );
     }
 }

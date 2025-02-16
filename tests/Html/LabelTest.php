@@ -23,7 +23,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label></label>',
-            $this->html->label()
+            $this->html->label(),
         );
     }
 
@@ -32,7 +32,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label>Hi</label>',
-            $this->html->label('Hi')
+            $this->html->label('Hi'),
         );
     }
 
@@ -41,7 +41,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label><em>Hi</em></label>',
-            $this->html->label('<em>Hi</em>')
+            $this->html->label('<em>Hi</em>'),
         );
     }
 
@@ -50,7 +50,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label for="some_input_id">Hi</label>',
-            $this->html->label('Hi', 'some_input_id')
+            $this->html->label('Hi', 'some_input_id'),
         );
     }
 
@@ -59,7 +59,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label>5000</label>',
-            $this->html->label(5000)
+            $this->html->label(5000),
         );
     }
 
@@ -68,7 +68,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label>5000.5</label>',
-            $this->html->label(5000.5)
+            $this->html->label(5000.5),
         );
     }
 
@@ -77,7 +77,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label>291</label>',
-            $this->html->label(0x123)
+            $this->html->label(0x123),
         );
     }
 
@@ -86,7 +86,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label>209</label>',
-            $this->html->label(0321)
+            $this->html->label(0321),
         );
     }
 }

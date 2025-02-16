@@ -24,7 +24,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea></textarea>',
-            Textarea::make()
+            Textarea::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea autofocus></textarea>',
-            Textarea::make()->autofocus()
+            Textarea::make()->autofocus(),
         );
     }
 
@@ -42,7 +42,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea placeholder="Lorem ipsum"></textarea>',
-            Textarea::make()->placeholder('Lorem ipsum')
+            Textarea::make()->placeholder('Lorem ipsum'),
         );
     }
 
@@ -51,7 +51,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea name="text"></textarea>',
-            Textarea::make()->name('text')
+            Textarea::make()->name('text'),
         );
     }
 
@@ -60,7 +60,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea>My epic content</textarea>',
-            Textarea::make()->value('My epic content')
+            Textarea::make()->value('My epic content'),
         );
     }
 
@@ -69,7 +69,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea required>My epic content</textarea>',
-            Textarea::make()->value('My epic content')->required()
+            Textarea::make()->value('My epic content')->required(),
         );
     }
 
@@ -78,7 +78,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea cols="60" rows="15">My epic content</textarea>',
-            Textarea::make()->value('My epic content')->size('60x15')
+            Textarea::make()->value('My epic content')->size('60x15'),
         );
     }
 
@@ -87,7 +87,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea required>My epic</textarea>',
-            Textarea::make()->value('My epic')->required(true)
+            Textarea::make()->value('My epic')->required(true),
         );
     }
 
@@ -96,7 +96,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea>My epic</textarea>',
-            Textarea::make()->value('My epic')->required(false)
+            Textarea::make()->value('My epic')->required(false),
         );
     }
 
@@ -105,7 +105,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea disabled>My epic</textarea>',
-            Textarea::make()->value('My epic')->disabled()
+            Textarea::make()->value('My epic')->disabled(),
         );
     }
 
@@ -114,7 +114,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea disabled>My epic</textarea>',
-            Textarea::make()->value('My epic')->disabled(true)
+            Textarea::make()->value('My epic')->disabled(true),
         );
     }
 
@@ -123,7 +123,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea>My epic</textarea>',
-            Textarea::make()->value('My epic')->disabled(false)
+            Textarea::make()->value('My epic')->disabled(false),
         );
     }
 
@@ -132,7 +132,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea readonly>My epic</textarea>',
-            Textarea::make()->value('My epic')->isReadonly()
+            Textarea::make()->value('My epic')->isReadonly(),
         );
     }
 
@@ -141,7 +141,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea readonly>My epic</textarea>',
-            Textarea::make()->value('My epic')->isReadonly(true)
+            Textarea::make()->value('My epic')->isReadonly(true),
         );
     }
 
@@ -150,7 +150,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea>My epic</textarea>',
-            Textarea::make()->value('My epic')->isReadonly(false)
+            Textarea::make()->value('My epic')->isReadonly(false),
         );
     }
 
@@ -159,7 +159,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea maxlength="25">My epic</textarea>',
-            Textarea::make()->value('My epic')->maxlength(25)
+            Textarea::make()->value('My epic')->maxlength(25),
         );
     }
 
@@ -168,7 +168,7 @@ class TextareaTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<textarea minlength="25">My epic</textarea>',
-            Textarea::make()->value('My epic')->minlength(25)
+            Textarea::make()->value('My epic')->minlength(25),
         );
     }
 }

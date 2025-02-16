@@ -23,7 +23,7 @@ class ITest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<i></i>',
-            $this->html->i()
+            $this->html->i(),
         );
     }
 }

@@ -23,7 +23,7 @@ class TelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="tel:+19999999999">+19999999999</a>',
-            $this->html->telLink('+19999999999')
+            $this->html->telLink('+19999999999'),
         );
     }
 
@@ -32,7 +32,7 @@ class TelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="tel:+19999999999">Call me</a>',
-            $this->html->telLink('+19999999999', 'Call me')
+            $this->html->telLink('+19999999999', 'Call me'),
         );
     }
 }

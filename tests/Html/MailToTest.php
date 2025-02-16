@@ -23,7 +23,7 @@ class MailToTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="mailto:hello@example.com">hello@example.com</a>',
-            $this->html->mailto('hello@example.com')
+            $this->html->mailto('hello@example.com'),
         );
     }
 
@@ -32,7 +32,7 @@ class MailToTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="mailto:hello@example.com">E-mail</a>',
-            $this->html->mailto('hello@example.com', 'E-mail')
+            $this->html->mailto('hello@example.com', 'E-mail'),
         );
     }
 }

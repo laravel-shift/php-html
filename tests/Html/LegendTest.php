@@ -23,7 +23,7 @@ class LegendTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<legend></legend>',
-            $this->html->legend()
+            $this->html->legend(),
         );
     }
 
@@ -32,7 +32,7 @@ class LegendTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<legend>Hi</legend>',
-            $this->html->legend('Hi')
+            $this->html->legend('Hi'),
         );
     }
 }

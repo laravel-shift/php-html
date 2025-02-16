@@ -43,7 +43,7 @@ abstract class ListElement extends HtmlElement
     {
         return $this->children($items, fn($value) => $this->makeItem(
             is_array($value) ? static::make()->items($value) : $value, // Create nested items if the value is array
-            $attributes
+            $attributes,
         ));
     }
 }

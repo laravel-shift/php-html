@@ -40,12 +40,12 @@ class DlTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<dl></dl>',
-            $dl
+            $dl,
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<dl class="list-unstyled"></dl>',
-            Dl::make()->class('list-unstyled')
+            Dl::make()->class('list-unstyled'),
         );
     }
 
@@ -82,7 +82,7 @@ class DlTest extends TestCase
                 '<dt>Term 3</dt>' .
                 '<dd>Definition 3</dd>' .
             '</dl>',
-            $dl
+            $dl,
         );
     }
 
@@ -104,7 +104,7 @@ class DlTest extends TestCase
                 '<dt>Term 3</dt>' .
                 '<dd>Definition 3</dd>' .
             '</dl>',
-            Dl::make()->items($items)
+            Dl::make()->items($items),
         );
     }
 
@@ -128,8 +128,8 @@ class DlTest extends TestCase
             '</dl>',
             Dl::make()->items($items, [
                 'dt' => ['class' => 'list-item-term'],
-                'dd' => ['class' => 'list-item-definition']
-            ])
+                'dd' => ['class' => 'list-item-definition'],
+            ]),
         );
     }
 
@@ -153,7 +153,7 @@ class DlTest extends TestCase
                 '<dd>Definition 3-2</dd>' .
                 '<dd>Definition 3-3</dd>' .
             '</dl>',
-            Dl::make()->items($items)
+            Dl::make()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -169,8 +169,8 @@ class DlTest extends TestCase
             '</dl>',
             Dl::make()->items($items, [
                 'dt' => ['class' => 'list-item-term'],
-                'dd' => ['class' => 'list-item-definition']
-            ])
+                'dd' => ['class' => 'list-item-definition'],
+            ]),
         );
     }
 }

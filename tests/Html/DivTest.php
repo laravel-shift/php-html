@@ -23,7 +23,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div></div>',
-            $this->html->div()
+            $this->html->div(),
         );
     }
 
@@ -32,7 +32,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>500</div>',
-            $this->html->div(500)
+            $this->html->div(500),
         );
     }
 
@@ -41,7 +41,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>500.5</div>',
-            $this->html->div(500.5)
+            $this->html->div(500.5),
         );
     }
 
@@ -50,7 +50,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>420</div>',
-            $this->html->div(0x1A4)
+            $this->html->div(0x1A4),
         );
     }
 
@@ -59,7 +59,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>420</div>',
-            $this->html->div(0644)
+            $this->html->div(0644),
         );
     }
 }

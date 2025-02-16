@@ -24,7 +24,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a></a>',
-            A::make()
+            A::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="https://github.com"></a>',
-            A::make()->href('https://github.com')
+            A::make()->href('https://github.com'),
         );
     }
 
@@ -42,7 +42,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="#delete-user-modal" data-role="modal" data-id="1" data-name="User 1"></a>',
-            A::make()->href('#delete-user-modal')->data(['role' => 'modal', 'id' => 1, 'name' => 'User 1'])
+            A::make()->href('#delete-user-modal')->data(['role' => 'modal', 'id' => 1, 'name' => 'User 1']),
         );
     }
 
@@ -51,7 +51,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a target="_blank"></a>',
-            A::make()->target('_blank')
+            A::make()->target('_blank'),
         );
     }
 }

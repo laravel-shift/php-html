@@ -24,7 +24,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span></span>',
-            Span::make()
+            Span::make(),
         );
     }
 
@@ -33,13 +33,13 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span>Hi</span>',
-            Span::make()->html('Hi')
+            Span::make()->html('Hi'),
         );
 
 
         $this->assertHtmlStringEqualsHtmlString(
             '<span><em>Hi</em></span>',
-            Span::make()->html('<em>Hi</em>')
+            Span::make()->html('<em>Hi</em>'),
         );
     }
 
@@ -48,7 +48,7 @@ class SpanTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<span class="fa fa-fw fa-plus"></span>',
-            Span::make()->class(['fa', 'fa-fw', 'fa-plus'])
+            Span::make()->class(['fa', 'fa-fw', 'fa-plus']),
         );
     }
 }

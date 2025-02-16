@@ -24,7 +24,7 @@ class OptgroupTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<optgroup></optgroup>',
-            Optgroup::make()
+            Optgroup::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class OptgroupTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<optgroup label="Cats"></optgroup>',
-            Optgroup::make()->label('Cats')
+            Optgroup::make()->label('Cats'),
         );
     }
 
@@ -42,7 +42,7 @@ class OptgroupTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<optgroup disabled></optgroup>',
-            Optgroup::make()->disabled()
+            Optgroup::make()->disabled(),
         );
     }
 }

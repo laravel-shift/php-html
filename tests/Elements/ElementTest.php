@@ -25,7 +25,7 @@ class ElementTest extends TestCase
     {
         static::assertEquals(
             '<meta>',
-            HtmlElement::withTag('meta')
+            HtmlElement::withTag('meta'),
         );
     }
 
@@ -34,7 +34,7 @@ class ElementTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<meta name="csrf-token" content="csrf-token-value">',
-            HtmlElement::withTag('meta')->attributes(['name' => 'csrf-token', 'content' => 'csrf-token-value'])
+            HtmlElement::withTag('meta')->attributes(['name' => 'csrf-token', 'content' => 'csrf-token-value']),
         );
     }
 
@@ -43,7 +43,7 @@ class ElementTest extends TestCase
     {
         static::assertSame(
             '<foo></foo>',
-            HtmlElement::withTag('foo')->toHtml()
+            HtmlElement::withTag('foo')->toHtml(),
         );
     }
 
@@ -64,22 +64,22 @@ class ElementTest extends TestCase
 
         static::assertEquals(
             '<foo class="active"></foo>',
-            $elt->if(true, $callback)
+            $elt->if(true, $callback),
         );
 
         static::assertEquals(
             '<foo></foo>',
-            $elt->if(false, $callback)
+            $elt->if(false, $callback),
         );
 
         static::assertEquals(
             '<foo class="active"></foo>',
-            $elt->unless(false, $callback)
+            $elt->unless(false, $callback),
         );
 
         static::assertEquals(
             '<foo></foo>',
-            $elt->unless(true, $callback)
+            $elt->unless(true, $callback),
         );
     }
 
@@ -91,7 +91,7 @@ class ElementTest extends TestCase
             Div::make()
                 ->attributeIf(true, 'foo', 'bar')
                 ->attributeIf(false, 'bar', 'baz')
-                ->render()
+                ->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -99,14 +99,14 @@ class ElementTest extends TestCase
             HtmlElement::withTag('div')
                 ->attributeUnless(false, 'foo', 'bar')
                 ->attributeUnless(true, 'bar', 'baz')
-                ->render()
+                ->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<input required>',
             HtmlElement::withTag('input')
                 ->attributeUnless(false, 'required')
-                ->render()
+                ->render(),
         );
     }
 
@@ -117,26 +117,26 @@ class ElementTest extends TestCase
 
         static::assertEquals(
             '<a class="btn btn-primary"></a>',
-            $elt
+            $elt,
         );
 
         static::assertInstanceOf(
             \Arcanedev\Html\Entities\Attributes\ClassAttribute::class,
-            $elt->classList()
+            $elt->classList(),
         );
 
         $elt->classList()->toggle('active');
 
         static::assertEquals(
             '<a class="btn btn-primary active"></a>',
-            $elt
+            $elt,
         );
 
         $elt->classList()->toggle('active');
 
         static::assertEquals(
             '<a class="btn btn-primary"></a>',
-            $elt
+            $elt,
         );
     }
 
@@ -147,7 +147,7 @@ class ElementTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<a class="btn btn-primary"></a>',
-            $elt
+            $elt,
         );
         static::assertCount(2, $elt->classList());
 
@@ -155,7 +155,7 @@ class ElementTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<a class="btn btn-primary btn-block active"></a>',
-            $elt
+            $elt,
         );
         static::assertCount(4, $elt->classList());
     }

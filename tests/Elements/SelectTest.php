@@ -24,7 +24,7 @@ class SelectTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<select></select>',
-            Select::make()
+            Select::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class SelectTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<select required></select>',
-            Select::make()->required()
+            Select::make()->required(),
         );
     }
 
@@ -50,7 +50,7 @@ class SelectTest extends TestCase
                 <option value="value1">text1</option>
                 <option value="value2">text2</option>
             </select>',
-            Select::make()->options($options)
+            Select::make()->options($options),
         );
     }
 
@@ -67,7 +67,7 @@ class SelectTest extends TestCase
                 <option value="value1">text1</option>
                 <option value="value2" selected>text2</option>
             </select>',
-            Select::make()->options($options)->value('value2')
+            Select::make()->options($options)->value('value2'),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -79,7 +79,7 @@ class SelectTest extends TestCase
             Select::make()
                 ->name('avc')
                 ->options(['null' => 'Select an option', 1 => 'Yes', 0 => 'No'])
-                ->value(1)
+                ->value(1),
         );
     }
 
@@ -94,7 +94,7 @@ class SelectTest extends TestCase
             </select>',
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2'])
-                ->placeholder('Placeholder')
+                ->placeholder('Placeholder'),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -105,7 +105,7 @@ class SelectTest extends TestCase
             </select>',
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2'])
-                ->placeholder('Placeholder', 0)
+                ->placeholder('Placeholder', 0),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -116,7 +116,7 @@ class SelectTest extends TestCase
             </select>',
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2'])
-                ->placeholder('Placeholder', 0, true)
+                ->placeholder('Placeholder', 0, true),
         );
     }
 
@@ -132,7 +132,7 @@ class SelectTest extends TestCase
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2'])
                 ->value('value1')
-                ->placeholder('Placeholder', 0)
+                ->placeholder('Placeholder', 0),
         );
     }
 
@@ -147,7 +147,7 @@ class SelectTest extends TestCase
             </select>',
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2', 'value3' => 'text3'])
-                ->multiple()
+                ->multiple(),
         );
     }
 
@@ -163,7 +163,7 @@ class SelectTest extends TestCase
             Select::make()
                 ->name('foo')
                 ->options(['value1' => 'text1', 'value2' => 'text2', 'value3' => 'text3'])
-                ->multiple()
+                ->multiple(),
         );
     }
 
@@ -179,7 +179,7 @@ class SelectTest extends TestCase
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2', 'value3' => 'text3'])
                 ->value(['value1', 'value3'])
-                ->multiple()
+                ->multiple(),
         );
     }
 
@@ -195,7 +195,7 @@ class SelectTest extends TestCase
             Select::make()
                 ->options(['value1' => 'text1', 'value2' => 'text2', 'value3' => 'text3'])
                 ->value('value3')
-                ->multiple()
+                ->multiple(),
         );
     }
 
@@ -212,7 +212,7 @@ class SelectTest extends TestCase
                 </optgroup>
             </select>',
             Select::make()
-                ->options(['Cats' => ['leopard' => 'Leopard'], 'Dogs' => ['spaniel' => 'Spaniel']])
+                ->options(['Cats' => ['leopard' => 'Leopard'], 'Dogs' => ['spaniel' => 'Spaniel']]),
         );
     }
 
@@ -230,7 +230,7 @@ class SelectTest extends TestCase
             </select>',
             Select::make()
                 ->options(['Cats' => ['leopard' => 'Leopard'], 'Dogs' => ['spaniel' => 'Spaniel']])
-                ->value('leopard')
+                ->value('leopard'),
         );
     }
 
@@ -245,9 +245,9 @@ class SelectTest extends TestCase
             Select::make()
                 ->options(
                     ['leopard' => 'Leopard', 'spaniel' => 'Spaniel'],
-                    ['leopard' => ['disabled']]
+                    ['leopard' => ['disabled']],
                 )
-                ->value('spaniel')
+                ->value('spaniel'),
         );
     }
 
@@ -266,9 +266,9 @@ class SelectTest extends TestCase
             Select::make()
                 ->options(
                     ['Cats' => ['leopard' => 'Leopard'], 'Dogs' => ['spaniel' => 'Spaniel']],
-                    ['leopard' => ['disabled']]
+                    ['leopard' => ['disabled']],
                 )
-                ->value('spaniel')
+                ->value('spaniel'),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -285,9 +285,9 @@ class SelectTest extends TestCase
                 ->options(
                     ['Cats' => ['leopard' => 'Leopard'], 'Dogs' => ['spaniel' => 'Spaniel'], 'Others' => []],
                     ['leopard' => ['disabled']],
-                    ['Others' => ['disabled']]
+                    ['Others' => ['disabled']],
                 )
-                ->value('spaniel')
+                ->value('spaniel'),
         );
     }
 
@@ -310,7 +310,7 @@ class SelectTest extends TestCase
                 ->name('select')
                 ->id('select')
                 ->options($options)
-                ->value('+2')
+                ->value('+2'),
         );
     }
 
@@ -321,7 +321,7 @@ class SelectTest extends TestCase
             '<select disabled>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->disabled()->options(['value1' => 'text1'])->render()
+            Select::make()->disabled()->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -332,7 +332,7 @@ class SelectTest extends TestCase
             '<select disabled>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->disabled(true)->options(['value1' => 'text1'])->render()
+            Select::make()->disabled(true)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -343,7 +343,7 @@ class SelectTest extends TestCase
             '<select>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->disabled(false)->options(['value1' => 'text1'])->render()
+            Select::make()->disabled(false)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -354,7 +354,7 @@ class SelectTest extends TestCase
             '<select autofocus>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->autofocus()->options(['value1' => 'text1'])->render()
+            Select::make()->autofocus()->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -365,7 +365,7 @@ class SelectTest extends TestCase
             '<select autofocus>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->autofocus(true)->options(['value1' => 'text1'])->render()
+            Select::make()->autofocus(true)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -376,7 +376,7 @@ class SelectTest extends TestCase
             '<select>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->autofocus(false)->options(['value1' => 'text1'])->render()
+            Select::make()->autofocus(false)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -387,7 +387,7 @@ class SelectTest extends TestCase
             '<select required>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->required()->options(['value1' => 'text1'])->render()
+            Select::make()->required()->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -398,7 +398,7 @@ class SelectTest extends TestCase
             '<select required>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->required(true)->options(['value1' => 'text1'])->render()
+            Select::make()->required(true)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -409,7 +409,7 @@ class SelectTest extends TestCase
             '<select>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->required(false)->options(['value1' => 'text1'])->render()
+            Select::make()->required(false)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -420,7 +420,7 @@ class SelectTest extends TestCase
             '<select readonly>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->isReadonly()->options(['value1' => 'text1'])->render()
+            Select::make()->isReadonly()->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -431,7 +431,7 @@ class SelectTest extends TestCase
             '<select readonly>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->isReadonly(true)->options(['value1' => 'text1'])->render()
+            Select::make()->isReadonly(true)->options(['value1' => 'text1'])->render(),
         );
     }
 
@@ -442,7 +442,7 @@ class SelectTest extends TestCase
             '<select>
                 <option value="value1">text1</option>
             </select>',
-            Select::make()->isReadonly(false)->options(['value1' => 'text1'])->render()
+            Select::make()->isReadonly(false)->options(['value1' => 'text1'])->render(),
         );
     }
 }

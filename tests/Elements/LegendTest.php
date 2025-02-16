@@ -24,7 +24,7 @@ class LegendTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<legend></legend>',
-            Legend::make()
+            Legend::make(),
         );
     }
 }

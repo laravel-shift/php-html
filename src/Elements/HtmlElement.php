@@ -167,7 +167,7 @@ class HtmlElement implements HtmlElementContract
             $style = implode('; ', array_map(
                 fn($value, $attribute) => "{$attribute}: {$value}",
                 $style,
-                array_keys($style)
+                array_keys($style),
             ));
         }
 
@@ -183,7 +183,7 @@ class HtmlElement implements HtmlElementContract
     {
         return $this->attributes(
             Collection::make(is_array($name) ? $name : [$name => $value])
-                ->mapWithKeys(fn($mapValue, $mapKey) => ["data-{$mapKey}" => $mapValue])
+                ->mapWithKeys(fn($mapValue, $mapKey) => ["data-{$mapKey}" => $mapValue]),
         );
     }
 
@@ -223,7 +223,7 @@ class HtmlElement implements HtmlElementContract
             : "<{$this->getTag()}>";
 
         return new HtmlString(
-            $html . $this->getChildren()->toHtml()
+            $html . $this->getChildren()->toHtml(),
         );
     }
 
@@ -233,7 +233,7 @@ class HtmlElement implements HtmlElementContract
     public function close(): HtmlString
     {
         return new HtmlString(
-            $this->isVoidElement() ? '' : "</{$this->getTag()}>"
+            $this->isVoidElement() ? '' : "</{$this->getTag()}>",
         );
     }
 

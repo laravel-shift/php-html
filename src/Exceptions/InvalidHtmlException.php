@@ -21,7 +21,7 @@ class InvalidHtmlException extends Exception
     public static function onTag(string $tag): static
     {
         return new static(
-            "Can't set inner contents on `{$tag}` because it's a void element"
+            "Can't set inner contents on `{$tag}` because it's a void element",
         );
     }
 }

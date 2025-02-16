@@ -23,7 +23,7 @@ class SubmitTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="submit"></button>',
-            $this->html->submit()
+            $this->html->submit(),
         );
     }
 
@@ -32,7 +32,7 @@ class SubmitTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="submit">Send</button>',
-            $this->html->submit('Send')
+            $this->html->submit('Send'),
         );
     }
 }

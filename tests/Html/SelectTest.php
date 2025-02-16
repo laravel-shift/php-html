@@ -23,7 +23,7 @@ class SelectTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<select></select>',
-            $this->html->select()
+            $this->html->select(),
         );
     }
 
@@ -32,7 +32,7 @@ class SelectTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<select required></select>',
-            $this->html->select()->required()
+            $this->html->select()->required(),
         );
     }
 
@@ -49,7 +49,7 @@ class SelectTest extends TestCase
                 <option value="value1">text1</option>
                 <option value="value2">text2</option>
             </select>',
-            $this->html->select('select', $options)
+            $this->html->select('select', $options),
         );
     }
 
@@ -66,7 +66,7 @@ class SelectTest extends TestCase
                 <option value="value1" selected="selected">text1</option>
                 <option value="value2">text2</option>
             </select>',
-            $this->html->select('select', $options, 'value1')
+            $this->html->select('select', $options, 'value1'),
         );
     }
 
@@ -85,7 +85,7 @@ class SelectTest extends TestCase
                 <option selected="selected" value="2">2</option>
                 <option value="+2" selected="selected">+2</option>
             </select>',
-            $this->html->select('select', $options, '+2')
+            $this->html->select('select', $options, '+2'),
         );
     }
 
@@ -104,7 +104,7 @@ class SelectTest extends TestCase
                 <option value="value2" selected>text2</option>
                 <option value="value3">text3</option>
             </select>',
-            $this->html->select('select', $options, ['value1', 'value2'])->multiple()
+            $this->html->select('select', $options, ['value1', 'value2'])->multiple(),
         );
     }
 }

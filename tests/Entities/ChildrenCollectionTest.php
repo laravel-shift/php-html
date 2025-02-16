@@ -62,11 +62,9 @@ class ChildrenCollectionTest extends TestCase
     #[Test]
     public function it_can_convert_to_html(): void
     {
-        $children = ChildrenCollection::parse(['foo', null, 'bar'], function ($child) {
-            return $child !== null
+        $children = ChildrenCollection::parse(['foo', null, 'bar'], fn($child) => $child !== null
                 ? Span::make()->html($child)
-                : $child;
-        });
+                : $child);
 
         static::assertCount(3, $children);
         static::assertEquals('<span>foo</span><span>bar</span>', $children->toHtml());

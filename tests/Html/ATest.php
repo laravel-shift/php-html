@@ -23,7 +23,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a></a>',
-            $this->html->a()
+            $this->html->a(),
         );
     }
 
@@ -32,7 +32,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="https://github.com"></a>',
-            $this->html->a('https://github.com')
+            $this->html->a('https://github.com'),
         );
     }
 
@@ -41,7 +41,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="https://github.com">ARCANEDEV</a>',
-            $this->html->a('https://github.com', 'ARCANEDEV')
+            $this->html->a('https://github.com', 'ARCANEDEV'),
         );
     }
 
@@ -50,7 +50,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="https://github.com/ARCANEDEV">ARCANEDEV <em>(Github)</em></a>',
-            $this->html->a('https://github.com/ARCANEDEV', 'ARCANEDEV <em>(Github)</em>')
+            $this->html->a('https://github.com/ARCANEDEV', 'ARCANEDEV <em>(Github)</em>'),
         );
     }
 
@@ -59,7 +59,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a target="_blank"></a>',
-            $this->html->a()->target('_blank')
+            $this->html->a()->target('_blank'),
         );
     }
 
@@ -68,7 +68,7 @@ class ATest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<a href="https://github.com/ARCANEDEV" target="_blank">ARCANEDEV <em>(Github)</em></a>',
-            $this->html->a('https://github.com/ARCANEDEV', 'ARCANEDEV <em>(Github)</em>')->target('_blank')
+            $this->html->a('https://github.com/ARCANEDEV', 'ARCANEDEV <em>(Github)</em>')->target('_blank'),
         );
     }
 }

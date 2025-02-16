@@ -23,7 +23,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea></textarea>',
-            $this->html->textarea()
+            $this->html->textarea(),
         );
     }
 
@@ -32,7 +32,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea id="description" name="description"></textarea>',
-            $this->html->textarea('description')
+            $this->html->textarea('description'),
         );
     }
 
@@ -41,7 +41,7 @@ class TextareaTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<textarea id="description" name="description">Foo bar</textarea>',
-            $this->html->textarea('description', 'Foo bar')
+            $this->html->textarea('description', 'Foo bar'),
         );
     }
 }

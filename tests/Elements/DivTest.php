@@ -35,11 +35,11 @@ class DivTest extends TestCase
         return [
             [
                 [],
-                '<div></div>'
+                '<div></div>',
             ],
             [
                 ['width' => '20px', 'background-color' => 'red'],
-                '<div style="width: 20px; background-color: red"></div>'
+                '<div style="width: 20px; background-color: red"></div>',
             ],
         ];
     }
@@ -54,7 +54,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div></div>',
-            Div::make()
+            Div::make(),
         );
     }
 
@@ -63,7 +63,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div foo="bar"></div>',
-            Div::make()->attribute('foo', 'bar')->render()
+            Div::make()->attribute('foo', 'bar')->render(),
         );
     }
 
@@ -72,7 +72,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div foo=""></div>',
-            Div::make()->attribute('foo')->render()
+            Div::make()->attribute('foo')->render(),
         );
     }
 
@@ -81,7 +81,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div foo="bar"></div>',
-            Div::make()->attribute('foo', 'bar')->render()
+            Div::make()->attribute('foo', 'bar')->render(),
         );
     }
 
@@ -90,12 +90,12 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div foo="bar"></div>',
-            Div::make()->attributeIf(true, 'foo', 'bar')->attributeIf(false, 'bar', 'baz')->render()
+            Div::make()->attributeIf(true, 'foo', 'bar')->attributeIf(false, 'bar', 'baz')->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div foo="bar"></div>',
-            Div::make()->attributeUnless(false, 'foo', 'bar')->attributeUnless(true, 'bar', 'baz')->render()
+            Div::make()->attributeUnless(false, 'foo', 'bar')->attributeUnless(true, 'bar', 'baz')->render(),
         );
     }
 
@@ -104,7 +104,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div class="bar"></div>',
-            Div::make()->classIf(true, 'bar')->classIf(false, 'baz')->render()
+            Div::make()->classIf(true, 'bar')->classIf(false, 'baz')->render(),
         );
     }
 
@@ -121,7 +121,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div></div>',
-            Div::make()->attribute('foo', 'bar')->forgetAttribute('foo')->render()
+            Div::make()->attribute('foo', 'bar')->forgetAttribute('foo')->render(),
         );
     }
 
@@ -153,7 +153,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div id="main"></div>',
-            Div::make()->id('main')->render()
+            Div::make()->id('main')->render(),
         );
     }
 
@@ -162,7 +162,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div foo bar="baz"></div>',
-            Div::make()->attributes(['foo', 'bar' => 'baz'])->render()
+            Div::make()->attributes(['foo', 'bar' => 'baz'])->render(),
         );
     }
 
@@ -171,17 +171,17 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div class="foo"></div>',
-            Div::make()->class('foo')->render()
+            Div::make()->class('foo')->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div class="foo bar"></div>',
-            Div::make()->class(['foo', 'bar'])->render()
+            Div::make()->class(['foo', 'bar'])->render(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div class="foo"></div>',
-            Div::make()->class(['foo', 'bar' => false])->render()
+            Div::make()->class(['foo', 'bar' => false])->render(),
         );
     }
 
@@ -190,7 +190,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div class="foo"></div>',
-            Div::make()->class('foo')->render()
+            Div::make()->class('foo')->render(),
         );
     }
 
@@ -199,7 +199,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div style="color: red"></div>',
-            Div::make()->style('color: red')->render()
+            Div::make()->style('color: red')->render(),
         );
     }
 
@@ -208,7 +208,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div style="color: red"></div>',
-            Div::make()->style(['color' => 'red'])->render()
+            Div::make()->style(['color' => 'red'])->render(),
         );
     }
 
@@ -217,7 +217,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>Hi &amp; Bye</div>',
-            Div::make()->text('Hi & Bye')->render()
+            Div::make()->text('Hi & Bye')->render(),
         );
     }
 
@@ -226,7 +226,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><span>Yo</span></div>',
-            Div::make()->html('<span>Yo</span>')->render()
+            Div::make()->html('<span>Yo</span>')->render(),
         );
     }
 
@@ -235,7 +235,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><span>Yo</span></div>',
-            Div::make()->html(new HtmlString('<span>Yo</span>'))->render()
+            Div::make()->html(new HtmlString('<span>Yo</span>'))->render(),
         );
     }
 
@@ -252,7 +252,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>Hi</div>',
-            Div::make()->addChild(Div::make())->text('Hi')->render()
+            Div::make()->addChild(Div::make())->text('Hi')->render(),
         );
     }
 
@@ -282,7 +282,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>Hello</div>',
-            Div::make()->addChild('Hello')
+            Div::make()->addChild('Hello'),
         );
     }
 
@@ -291,7 +291,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div></div>',
-            Div::make()->addChild(Div::make()->text('Hello'))
+            Div::make()->addChild(Div::make()->text('Hello')),
         );
     }
 
@@ -300,7 +300,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div>Helloworld</div>',
-            Div::make()->addChild(['Hello', 'world'])
+            Div::make()->addChild(['Hello', 'world']),
         );
     }
 
@@ -309,7 +309,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div><div>World</div></div>',
-            Div::make()->children([Div::make()->text('Hello'), Div::make()->text('World')])
+            Div::make()->children([Div::make()->text('Hello'), Div::make()->text('World')]),
         );
     }
 
@@ -320,7 +320,7 @@ class DivTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div><div>World</div></div>',
-            Div::make()->addChild($children)
+            Div::make()->addChild($children),
         );
     }
 
@@ -329,7 +329,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div></div>',
-            Div::make()->addChild(null)
+            Div::make()->addChild(null),
         );
     }
 
@@ -338,22 +338,22 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div><div>World</div></div>',
-            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv'])
+            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv']),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div><div>World</div></div>',
-            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv'])
+            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv']),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div><div>World</div></div>',
-            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv'])
+            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv']),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div><div>World</div></div>',
-            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv'])
+            Div::make()->children(['Hello', 'World'], [$this, 'wrapInDiv']),
         );
     }
 
@@ -362,7 +362,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div></div>',
-            Div::make()->addChild(Div::make()->text('Hello'))
+            Div::make()->addChild(Div::make()->text('Hello')),
         );
     }
 
@@ -371,7 +371,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div></div>',
-            Div::make()->addChild(Div::make()->text('Hello'))
+            Div::make()->addChild(Div::make()->text('Hello')),
         );
     }
 
@@ -380,7 +380,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>Hello</div></div>',
-            Div::make()->children(Div::make()->text('Hello'))
+            Div::make()->children(Div::make()->text('Hello')),
         );
     }
 
@@ -391,7 +391,7 @@ class DivTest extends TestCase
             '<div><div>World</div><div>Hello</div></div>',
             Div::make()
                 ->children(Div::make()->text('Hello'))
-                ->prependChildren(Div::make()->text('World'))
+                ->prependChildren(Div::make()->text('World')),
         );
     }
 
@@ -402,7 +402,7 @@ class DivTest extends TestCase
             '<div><div>World</div><div>Hello</div></div>',
             Div::make()
                 ->addChild(Div::make()->text('Hello'))
-                ->prependChild(Div::make()->text('World'))
+                ->prependChild(Div::make()->text('World')),
         );
     }
 
@@ -413,14 +413,14 @@ class DivTest extends TestCase
             '<div><div>World</div><div>Hello</div></div>',
             Div::make()
                 ->addChild(Div::make()->text('Hello'))
-                ->prependChildren(['World'], [$this, 'wrapInDiv'])
+                ->prependChildren(['World'], [$this, 'wrapInDiv']),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<div><div>World</div><div>Hello</div></div>',
             Div::make()
                 ->addChild(Div::make()->text('Hello'))
-                ->prependChild('World', [$this, 'wrapInDiv'])
+                ->prependChild('World', [$this, 'wrapInDiv']),
         );
     }
 
@@ -450,7 +450,7 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<div data-foo="bar"></div>',
-            Div::make()->data('foo', 'bar')->render()
+            Div::make()->data('foo', 'bar')->render(),
         );
     }
 
@@ -460,12 +460,12 @@ class DivTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             $expected,
-            Div::make()->styleIf( ! empty($styles), $styles)->toHtml()
+            Div::make()->styleIf( ! empty($styles), $styles)->toHtml(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             $expected,
-            Div::make()->styleUnless(empty($styles), $styles)->toHtml()
+            Div::make()->styleUnless(empty($styles), $styles)->toHtml(),
         );
     }
 }

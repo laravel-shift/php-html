@@ -24,7 +24,7 @@ class ITest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<i></i>',
-            I::make()
+            I::make(),
         );
     }
 }

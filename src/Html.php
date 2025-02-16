@@ -251,7 +251,7 @@ class Html implements HtmlContract
         mixed $value = null,
         mixed $min = null,
         mixed $max = null,
-        mixed $step = null
+        mixed $step = null,
     ): Input {
         return $this->input('number', $name, $value)
             ->attributeIfNotNull($min, 'min', $min)
@@ -312,7 +312,7 @@ class Html implements HtmlContract
         mixed $value = null,
         mixed $min = null,
         mixed $max = null,
-        mixed $step = null
+        mixed $step = null,
     ): Input {
         return $this->input('range', $name, $value)
             ->attributeIfNotNull($min, 'min', $min)

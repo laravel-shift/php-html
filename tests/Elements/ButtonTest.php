@@ -24,7 +24,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button></button>',
-            Button::make()
+            Button::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button value="1"></button>',
-            Button::make()->value(1)
+            Button::make()->value(1),
         );
     }
 
@@ -42,7 +42,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="submit" value="btn_value">Submit</button>',
-            Button::make()->text('Submit')->type('submit')->value('btn_value')
+            Button::make()->text('Submit')->type('submit')->value('btn_value'),
         );
     }
 
@@ -51,7 +51,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button>Hi</button>',
-            Button::make()->text('Hi')
+            Button::make()->text('Hi'),
         );
     }
 
@@ -60,7 +60,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button><em>Hi</em></button>',
-            Button::make()->html('<em>Hi</em>')
+            Button::make()->html('<em>Hi</em>'),
         );
     }
 
@@ -70,8 +70,8 @@ class ButtonTest extends TestCase
         static::assertHtmlStringEqualsHtmlString(
             '<button><i class="fa fa-plus"></i></button>',
             Button::make()->html(
-                I::make()->class(['fa', 'fa-plus'])
-            )
+                I::make()->class(['fa', 'fa-plus']),
+            ),
         );
     }
 
@@ -80,17 +80,17 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="submit">Hi</button>',
-            Button::make()->type('submit')->html('Hi')
+            Button::make()->type('submit')->html('Hi'),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<button type="submit">Hi</button>',
-            Button::make()->submit()->html('Hi')
+            Button::make()->submit()->html('Hi'),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<button type="reset">Reset the form</button>',
-            Button::make()->reset()->html('Reset the form')
+            Button::make()->reset()->html('Reset the form'),
         );
     }
 
@@ -99,7 +99,7 @@ class ButtonTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button disabled></button>',
-            Button::make()->disabled()
+            Button::make()->disabled(),
         );
     }
 }

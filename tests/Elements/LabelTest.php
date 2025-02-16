@@ -24,7 +24,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label></label>',
-            Label::make()
+            Label::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class LabelTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<label for="some_input_id"></label>',
-            Label::make()->for('some_input_id')
+            Label::make()->for('some_input_id'),
         );
     }
 }

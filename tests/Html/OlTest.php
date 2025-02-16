@@ -23,12 +23,12 @@ class OlTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<ol></ol>',
-            $this->html->ol()
+            $this->html->ol(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<ol class="list-unstyled"></ol>',
-            $this->html->ol(['class' => 'list-unstyled'])
+            $this->html->ol(['class' => 'list-unstyled']),
         );
     }
 
@@ -57,7 +57,7 @@ class OlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ol>',
-            $ol
+            $ol,
         );
     }
 
@@ -76,7 +76,7 @@ class OlTest extends TestCase
                 '<li><a href="#">Item 2</a></li>' .
                 '<li><a href="#">Item 3</a></li>' .
             '</ol>',
-            $this->html->ol()->items($items)
+            $this->html->ol()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -87,7 +87,7 @@ class OlTest extends TestCase
             '</ol>',
             $this->html
                 ->ol(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 
@@ -106,7 +106,7 @@ class OlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ol>',
-            $this->html->ol()->items($items)
+            $this->html->ol()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -117,7 +117,7 @@ class OlTest extends TestCase
             '</ol>',
             $this->html
                 ->ol(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 }

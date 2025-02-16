@@ -24,7 +24,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form></form>',
-            Form::make()
+            Form::make(),
         );
     }
 
@@ -36,7 +36,7 @@ class FormTest extends TestCase
         static::assertSame('<form>', (string) $form->open());
         static::assertSame(
             '<form method="POST" action="contact">',
-            (string) $form->method('POST')->action('contact')->open()
+            (string) $form->method('POST')->action('contact')->open(),
         );
 
         static::assertSame('</form>', (string) $form->close());
@@ -47,7 +47,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form action="/submit"></form>',
-            Form::make()->action('/submit')
+            Form::make()->action('/submit'),
         );
     }
 
@@ -56,7 +56,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form method="POST"></form>',
-            Form::make()->method('POST')
+            Form::make()->method('POST'),
         );
     }
 
@@ -65,7 +65,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form enctype="multipart/form-data"></form>',
-            Form::make()->acceptsFiles()
+            Form::make()->acceptsFiles(),
         );
     }
 
@@ -74,7 +74,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form method="POST" action="/submit"></form>',
-            Form::make()->action('/submit')->method('DELETE')
+            Form::make()->action('/submit')->method('DELETE'),
         );
     }
 
@@ -83,7 +83,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form enctype="multipart/form-data" novalidate=""></form>',
-            Form::make()->novalidate()->acceptsFiles()
+            Form::make()->novalidate()->acceptsFiles(),
         );
     }
 
@@ -92,7 +92,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form enctype="multipart/form-data" novalidate=""></form>',
-            Form::make()->novalidate(true)->acceptsFiles()
+            Form::make()->novalidate(true)->acceptsFiles(),
         );
     }
 
@@ -101,7 +101,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form enctype="multipart/form-data"></form>',
-            Form::make()->novalidate(false)->acceptsFiles()
+            Form::make()->novalidate(false)->acceptsFiles(),
         );
     }
 
@@ -111,24 +111,24 @@ class FormTest extends TestCase
         $form = Form::make();
 
         $form = $form->addChild(
-            Input::make()->type('hidden')->name('_token')->value('12345')
+            Input::make()->type('hidden')->name('_token')->value('12345'),
         );
 
         static::assertCount(1, $form->getChildren());
 
         $form = $form->addChild(
-            Input::make()->type('hidden')->name('_method')->value('PUT')
+            Input::make()->type('hidden')->name('_method')->value('PUT'),
         );
 
         static::assertCount(2, $form->getChildren());
 
         static::assertHtmlStringEqualsHtmlString(
             '<form><input name="_token" type="hidden" value="12345"/><input name="_method" type="hidden" value="PUT"/></form>',
-            $form->toHtml()
+            $form->toHtml(),
         );
         static::assertHtmlStringEqualsHtmlString(
             '<form><input name="_token" type="hidden" value="12345"/><input name="_method" type="hidden" value="PUT"/>',
-            $form->open()->toHtml()
+            $form->open()->toHtml(),
         );
     }
 
@@ -138,24 +138,24 @@ class FormTest extends TestCase
         $form = Form::make();
 
         $form = $form->addChild(
-            Input::make()->type('hidden')->name('_token')->value('12345')->render()
+            Input::make()->type('hidden')->name('_token')->value('12345')->render(),
         );
 
         static::assertCount(1, $form->getChildren());
 
         $form = $form->addChild(
-            Input::make()->type('hidden')->name('_method')->value('PUT')->render()
+            Input::make()->type('hidden')->name('_method')->value('PUT')->render(),
         );
 
         static::assertCount(2, $form->getChildren());
 
         static::assertHtmlStringEqualsHtmlString(
             '<form><input name="_token" type="hidden" value="12345"/><input name="_method" type="hidden" value="PUT"/></form>',
-            $form->toHtml()
+            $form->toHtml(),
         );
         static::assertHtmlStringEqualsHtmlString(
             '<form><input name="_token" type="hidden" value="12345"/><input name="_method" type="hidden" value="PUT"/>',
-            $form->open()->toHtml()
+            $form->open()->toHtml(),
         );
     }
 
@@ -164,7 +164,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form target="_blank"></form>',
-            Form::make()->target('_blank')
+            Form::make()->target('_blank'),
         );
     }
 }

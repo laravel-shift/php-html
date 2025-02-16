@@ -33,7 +33,7 @@ class Dl extends HtmlElement
     public function dt(mixed $value, array $attributes = []): static
     {
         return $this->addChild(
-            $this->makeTerm($value, $attributes)
+            $this->makeTerm($value, $attributes),
         );
     }
 
@@ -45,7 +45,7 @@ class Dl extends HtmlElement
     public function dd(mixed $value, array $attributes = []): static
     {
         return $this->addChild(
-            $this->makeDefinition($value, $attributes)
+            $this->makeDefinition($value, $attributes),
         );
     }
 

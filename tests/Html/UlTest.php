@@ -23,12 +23,12 @@ class UlTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<ul></ul>',
-            $this->html->ul()
+            $this->html->ul(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<ul class="list-unstyled"></ul>',
-            $this->html->ul(['class' => 'list-unstyled'])
+            $this->html->ul(['class' => 'list-unstyled']),
         );
     }
 
@@ -57,7 +57,7 @@ class UlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ul>',
-            $ul
+            $ul,
         );
     }
 
@@ -76,7 +76,7 @@ class UlTest extends TestCase
                 '<li><a href="#">Item 2</a></li>' .
                 '<li><a href="#">Item 3</a></li>' .
             '</ul>',
-            $this->html->ul()->items($items)
+            $this->html->ul()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -87,7 +87,7 @@ class UlTest extends TestCase
             '</ul>',
             $this->html
                 ->ul(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 
@@ -106,7 +106,7 @@ class UlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ul>',
-            $this->html->ul()->items($items)
+            $this->html->ul()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -117,7 +117,7 @@ class UlTest extends TestCase
             '</ul>',
             $this->html
                 ->ul(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 }

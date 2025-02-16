@@ -149,7 +149,7 @@ class Attributes implements ArrayAccess, Arrayable
 
         return implode(' ', array_map(
             fn(AbstractAttribute $attribute) => $attribute->render(),
-            $this->items
+            $this->items,
         ));
     }
 
@@ -160,7 +160,7 @@ class Attributes implements ArrayAccess, Arrayable
     {
         return array_map(
             fn(AbstractAttribute $attribute) => $attribute->value(),
-            $this->items
+            $this->items,
         );
     }
 

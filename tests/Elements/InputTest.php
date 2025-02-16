@@ -24,7 +24,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input>',
-            Input::make()
+            Input::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="text">',
-            Input::make()->type('text')
+            Input::make()->type('text'),
         );
     }
 
@@ -42,7 +42,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input name="foo">',
-            Input::make()->name('foo')
+            Input::make()->name('foo'),
         );
     }
 
@@ -51,7 +51,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input value="bar">',
-            Input::make()->value('bar')
+            Input::make()->value('bar'),
         );
     }
 
@@ -60,7 +60,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input placeholder="Foo bar">',
-            Input::make()->placeholder('Foo bar')
+            Input::make()->placeholder('Foo bar'),
         );
     }
 
@@ -69,7 +69,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input required>',
-            Input::make()->required()
+            Input::make()->required(),
         );
     }
 
@@ -78,7 +78,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input required>',
-            Input::make()->required(true)
+            Input::make()->required(true),
         );
     }
 
@@ -87,7 +87,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input>',
-            Input::make()->required(false)
+            Input::make()->required(false),
         );
     }
 
@@ -96,7 +96,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input autofocus>',
-            Input::make()->autofocus()
+            Input::make()->autofocus(),
         );
     }
 
@@ -105,7 +105,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input autofocus>',
-            Input::make()->autofocus(true)
+            Input::make()->autofocus(true),
         );
     }
 
@@ -114,7 +114,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input>',
-            Input::make()->autofocus(false)
+            Input::make()->autofocus(false),
         );
     }
 
@@ -123,12 +123,12 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" checked="checked">',
-            Input::make()->type('checkbox')->checked(true)
+            Input::make()->type('checkbox')->checked(true),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" checked="checked">',
-            Input::make()->type('checkbox')->checked()
+            Input::make()->type('checkbox')->checked(),
         );
     }
 
@@ -137,12 +137,12 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox">',
-            Input::make()->type('checkbox')->checked()->checked(false)
+            Input::make()->type('checkbox')->checked()->checked(false),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox">',
-            Input::make()->type('checkbox')->checked()->unchecked()
+            Input::make()->type('checkbox')->checked()->unchecked(),
         );
     }
 
@@ -151,7 +151,7 @@ class InputTest extends TestCase
     {
         $this->assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" disabled>',
-            Input::make()->type('checkbox')->disabled()
+            Input::make()->type('checkbox')->disabled(),
         );
     }
 
@@ -160,7 +160,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="text" name="foo" id="foo" value="bar">',
-            Input::make()->type('text')->name('foo')->id('foo')->value('bar')
+            Input::make()->type('text')->name('foo')->id('foo')->value('bar'),
         );
     }
 
@@ -169,7 +169,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input readonly>',
-            Input::make()->isReadonly()
+            Input::make()->isReadonly(),
         );
     }
 
@@ -178,7 +178,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="date">',
-            Input::make()->type('date')
+            Input::make()->type('date'),
         );
     }
 
@@ -187,7 +187,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="time">',
-            Input::make()->type('time')
+            Input::make()->type('time'),
         );
     }
 
@@ -196,7 +196,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="number">',
-            Input::make()->type('number')
+            Input::make()->type('number'),
         );
     }
 
@@ -205,12 +205,12 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="button">',
-            Input::make()->type('button')
+            Input::make()->type('button'),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<input type="button" disabled="disabled">',
-            Input::make()->type('button')->disabled()
+            Input::make()->type('button')->disabled(),
         );
     }
 
@@ -219,7 +219,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="text" maxlength="25">',
-            Input::make()->type('text')->maxlength(25)
+            Input::make()->type('text')->maxlength(25),
         );
     }
 
@@ -228,7 +228,7 @@ class InputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="text" minlength="25">',
-            Input::make()->type('text')->minlength(25)
+            Input::make()->type('text')->minlength(25),
         );
     }
 }

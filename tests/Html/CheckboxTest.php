@@ -23,7 +23,7 @@ class CheckboxTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" value="1">',
-            $this->html->checkbox()
+            $this->html->checkbox(),
         );
     }
 
@@ -32,7 +32,7 @@ class CheckboxTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" name="my_checkbox" id="my_checkbox" value="1">',
-            $this->html->checkbox('my_checkbox')
+            $this->html->checkbox('my_checkbox'),
         );
     }
 
@@ -41,7 +41,7 @@ class CheckboxTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" name="my_checkbox" id="my_checkbox" checked="checked" value="1">',
-            $this->html->checkbox('my_checkbox', true)
+            $this->html->checkbox('my_checkbox', true),
         );
     }
 
@@ -50,7 +50,7 @@ class CheckboxTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" name="my_checkbox" id="my_checkbox" checked="checked" value="foo">',
-            $this->html->checkbox('my_checkbox', true, 'foo')
+            $this->html->checkbox('my_checkbox', true, 'foo'),
         );
     }
 
@@ -59,7 +59,7 @@ class CheckboxTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="checkbox" name="my_checkbox" id="my_checkbox" checked="checked" value="0">',
-            $this->html->checkbox('my_checkbox', true, 0)
+            $this->html->checkbox('my_checkbox', true, 0),
         );
     }
 }

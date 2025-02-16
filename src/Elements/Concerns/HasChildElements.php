@@ -88,7 +88,7 @@ trait HasChildElements
 
         return tap(clone $this, function (HtmlElement $elt) use ($child, $mapper): void {
             $elt->setChildren(
-                $elt->getChildren()->merge(ChildrenCollection::parse($child, $mapper))
+                $elt->getChildren()->merge(ChildrenCollection::parse($child, $mapper)),
             );
         });
     }

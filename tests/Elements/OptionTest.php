@@ -24,7 +24,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option></option>',
-            Option::make()
+            Option::make(),
         );
     }
 
@@ -33,7 +33,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option value="0">Choose...</option>',
-            Option::make()->value('0')->text('Choose...')->render()
+            Option::make()->value('0')->text('Choose...')->render(),
         );
     }
 
@@ -42,12 +42,12 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option selected value="0">Choose...</option>',
-            Option::make()->value('0')->text('Choose...')->selected()
+            Option::make()->value('0')->text('Choose...')->selected(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<option selected value="0">Choose...</option>',
-            Option::make()->value('0')->text('Choose...')->selected()
+            Option::make()->value('0')->text('Choose...')->selected(),
         );
     }
 
@@ -56,7 +56,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option value="0">Choose...</option>',
-            Option::make()->value('0')->text('Choose...')->selected()->unselected()
+            Option::make()->value('0')->text('Choose...')->selected()->unselected(),
         );
     }
 
@@ -65,12 +65,12 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option selected value="0">Choose...</option>',
-            Option::make()->value('0')->text('Choose...')->selectedIf(true)
+            Option::make()->value('0')->text('Choose...')->selectedIf(true),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<option value="0">Choose...</option>',
-            Option::make()->value('0')->text('Choose...')->selectedIf(false)
+            Option::make()->value('0')->text('Choose...')->selectedIf(false),
         );
     }
 }

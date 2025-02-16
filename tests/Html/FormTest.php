@@ -23,7 +23,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form method="POST"></form>',
-            $this->html->form()
+            $this->html->form(),
         );
     }
 
@@ -32,7 +32,7 @@ class FormTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<form method="POST" action="/submit"></form>',
-            $this->html->form('POST', '/submit')
+            $this->html->form('POST', '/submit'),
         );
     }
 
@@ -46,7 +46,7 @@ class FormTest extends TestCase
             $this->html
                 ->form('POST', '/submit')
                 ->target('_blank')
-                ->addChild('<input type="hidden" name="_token" value="abc">')
+                ->addChild('<input type="hidden" name="_token" value="abc">'),
         );
     }
 }

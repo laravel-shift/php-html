@@ -34,7 +34,7 @@ class MetaTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             $expected,
-            Meta::make()->attributes(['name' => 'csrf-token', 'content' => '12345'])
+            Meta::make()->attributes(['name' => 'csrf-token', 'content' => '12345']),
         );
     }
 }

@@ -27,7 +27,7 @@ class UlTest extends TestCase
         $expectations = [
             \Arcanedev\Html\Elements\HtmlElement::class,
             \Arcanedev\Html\Elements\ListElement::class,
-            \Arcanedev\Html\Elements\Ul::class,
+            Ul::class,
         ];
 
         foreach ($expectations as $expected) {
@@ -40,12 +40,12 @@ class UlTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<ul></ul>',
-            Ul::make()
+            Ul::make(),
         );
 
         static::assertHtmlStringEqualsHtmlString(
             '<ul class="list-unstyled"></ul>',
-            Ul::make()->class('list-unstyled')
+            Ul::make()->class('list-unstyled'),
         );
     }
 
@@ -74,7 +74,7 @@ class UlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ul>',
-            $ul
+            $ul,
         );
     }
 
@@ -93,7 +93,7 @@ class UlTest extends TestCase
                 '<li><a href="#">Item 2</a></li>' .
                 '<li><a href="#">Item 3</a></li>' .
             '</ul>',
-            Ul::make()->items($items)
+            Ul::make()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -104,7 +104,7 @@ class UlTest extends TestCase
             '</ul>',
             Ul::make()
                 ->attributes(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 
@@ -123,7 +123,7 @@ class UlTest extends TestCase
                 '<li>Item 2</li>' .
                 '<li>Item 3</li>' .
             '</ul>',
-            Ul::make()->items($items)
+            Ul::make()->items($items),
         );
 
         static::assertHtmlStringEqualsHtmlString(
@@ -134,7 +134,7 @@ class UlTest extends TestCase
             '</ul>',
             Ul::make()
                 ->attributes(['class' => 'list-group'])
-                ->items($items, ['class' => 'list-group-item'])
+                ->items($items, ['class' => 'list-group-item']),
         );
     }
 
@@ -159,7 +159,7 @@ class UlTest extends TestCase
                     '</ul>' .
                 '</li>' .
             '</ul>',
-            Ul::make()->items($items)
+            Ul::make()->items($items),
         );
     }
 }

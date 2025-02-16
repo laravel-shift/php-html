@@ -43,7 +43,7 @@ class HtmlTest extends TestCase
     {
         static::assertSame(
             'class="btn btn-sm btn-primary"',
-            $this->html->class('btn btn-sm btn-primary')
+            $this->html->class('btn btn-sm btn-primary'),
         );
     }
 }

@@ -144,7 +144,7 @@ interface Html
         mixed $value = null,
         mixed $min = null,
         mixed $max = null,
-        mixed $step = null
+        mixed $step = null,
     ): Input;
 
     /**
@@ -175,7 +175,7 @@ interface Html
         mixed $value = null,
         mixed $min = null,
         mixed $max = null,
-        mixed $step = null
+        mixed $step = null,
     ): Input;
 
     /**

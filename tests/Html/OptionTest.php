@@ -23,7 +23,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option value=""></option>',
-            $this->html->option()
+            $this->html->option(),
         );
     }
 
@@ -32,7 +32,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option value="">Hi</option>',
-            $this->html->option('Hi')
+            $this->html->option('Hi'),
         );
     }
 
@@ -41,7 +41,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option value="1">Hi</option>',
-            $this->html->option('Hi', 1)
+            $this->html->option('Hi', 1),
         );
     }
 
@@ -50,7 +50,7 @@ class OptionTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<option selected value="1">Hi</option>',
-            $this->html->option('Hi', 1, true)
+            $this->html->option('Hi', 1, true),
         );
     }
 }

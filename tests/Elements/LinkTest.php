@@ -26,7 +26,7 @@ class LinkTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<link>',
-            $link->render()
+            $link->render(),
         );
     }
 
@@ -37,7 +37,7 @@ class LinkTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<link rel="stylesheet" href="/style.css">',
-            $link->render()
+            $link->render(),
         );
     }
 
@@ -48,7 +48,7 @@ class LinkTest extends TestCase
 
         static::assertHtmlStringEqualsHtmlString(
             '<link rel="icon" href="/favicon.ico">',
-            $link->render()
+            $link->render(),
         );
     }
 }

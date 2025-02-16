@@ -74,7 +74,7 @@ class MiscAttribute extends AbstractAttribute
      */
     protected function setValue(mixed $value): static
     {
-        $this->value = trim((string) $value);
+        $this->value = mb_trim((string) $value);
 
         return $this;
     }

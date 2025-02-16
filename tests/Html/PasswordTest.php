@@ -23,7 +23,7 @@ class PasswordTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="password">',
-            $this->html->password()
+            $this->html->password(),
         );
     }
 
@@ -32,7 +32,7 @@ class PasswordTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input id="confirm_password" type="password" name="confirm_password">',
-            $this->html->password('confirm_password')
+            $this->html->password('confirm_password'),
         );
     }
 }

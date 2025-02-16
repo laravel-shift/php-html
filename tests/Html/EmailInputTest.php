@@ -23,7 +23,7 @@ class EmailInputTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input id="email" name="email" type="email" value="hello@email.com"/>',
-            $this->html->email('email', 'hello@email.com')
+            $this->html->email('email', 'hello@email.com'),
         );
     }
 }

@@ -23,7 +23,7 @@ class FieldsetTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<fieldset></fieldset>',
-            $this->html->fieldset()
+            $this->html->fieldset(),
         );
     }
 
@@ -32,7 +32,7 @@ class FieldsetTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<fieldset><legend>Legend</legend></fieldset>',
-            $this->html->fieldset('Legend')
+            $this->html->fieldset('Legend'),
         );
     }
 
@@ -41,7 +41,7 @@ class FieldsetTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<fieldset><legend>Legend</legend></fieldset>',
-            $this->html->fieldset()->legend('Legend')
+            $this->html->fieldset()->legend('Legend'),
         );
     }
 }

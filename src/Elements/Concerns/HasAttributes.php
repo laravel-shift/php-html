@@ -97,7 +97,7 @@ trait HasAttributes
     /**
      * Get an attribute.
      *
-     * @return \Arcanedev\Html\Entities\Attributes\MiscAttribute|mixed
+     * @return Attributes\MiscAttribute|mixed
      */
     public function getAttribute(string $name, mixed $default = null): mixed
     {

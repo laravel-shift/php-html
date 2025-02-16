@@ -23,7 +23,7 @@ class ResetTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="reset"></button>',
-            $this->html->reset()
+            $this->html->reset(),
         );
     }
 
@@ -32,7 +32,7 @@ class ResetTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<button type="reset">Reset</button>',
-            $this->html->reset('Reset')
+            $this->html->reset('Reset'),
         );
     }
 }

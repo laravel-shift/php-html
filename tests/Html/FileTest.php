@@ -23,7 +23,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input type="file">',
-            $this->html->file()
+            $this->html->file(),
         );
     }
 
@@ -32,7 +32,7 @@ class FileTest extends TestCase
     {
         static::assertHtmlStringEqualsHtmlString(
             '<input id="archives" type="file" name="archives">',
-            $this->html->file('archives')
+            $this->html->file('archives'),
         );
     }
 }

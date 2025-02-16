@@ -40,7 +40,7 @@ class Fieldset extends HtmlElement
     public function legend(mixed $content): static
     {
         return $this->prependChild(
-            Legend::make()->text($content)
+            Legend::make()->text($content),
         );
     }
 }
